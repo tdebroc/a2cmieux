@@ -338,11 +338,14 @@ PAGES["qui-sommes-nous.html"] = dict(
         "Une association loi 1901, un club sportif affilié à la Fédération Française Handisport, et surtout une équipe de bénévoles passionnés.") +
 """    <section class="section">
       <div class="container">
-        <div class="narrow reveal">
-          <p class="tag-line">Notre histoire</p>
-          <h2>Le sport comme trait d'union</h2>
-          <p>A2CMieux — « Association pour Cyclisme, Course, Mieux » — est née de la conviction que le sport doit être accessible à toutes et à tous. Club sportif affilié à la <a href="{ffh}" target="_blank" rel="noopener">Fédération Française Handisport</a>, l'association a pour objet de favoriser toute activité sportive ou de loisir type multisport organisée par ou pour des personnes atteintes de déficience visuelle, grâce à la formation de Duos Sportifs.</p>
-          <p>Nous accompagnons chaque personne, quels que soient son niveau, ses besoins et son projet, pour découvrir, débuter, s'entraîner ou se perfectionner.</p>
+        <div class="split reveal">
+          <div>
+            <p class="tag-line">Notre histoire</p>
+            <h2>Le sport comme trait d'union</h2>
+            <p>A2CMieux — « Association pour Cyclisme, Course, Mieux » — est née de la conviction que le sport doit être accessible à toutes et à tous. Club sportif affilié à la <a href="{ffh}" target="_blank" rel="noopener">Fédération Française Handisport</a>, l'association a pour objet de favoriser toute activité sportive ou de loisir type multisport organisée par ou pour des personnes atteintes de déficience visuelle, grâce à la formation de Duos Sportifs.</p>
+            <p>Nous accompagnons chaque personne, quels que soient son niveau, ses besoins et son projet, pour découvrir, débuter, s'entraîner ou se perfectionner.</p>
+          </div>
+          <div class="split-media"><img src="assets/img/gallery/tandem-groupe.jpg" alt="Un groupe de cyclistes de l'association A2CMieux à l'entraînement sur des tandems."></div>
         </div>
       </div>
     </section>
@@ -358,6 +361,8 @@ PAGES["qui-sommes-nous.html"] = dict(
           <article class="card team-card"><div class="avatar" aria-hidden="true">L</div><h3>Ludovic</h3><p class="role">Bureau de l'association</p><p>Membre du bureau, impliqué dans la coordination des activités et l'accompagnement des duos.</p></article>
           <article class="card team-card"><div class="avatar" aria-hidden="true">S</div><h3>Stéphane</h3><p class="role">Bureau de l'association</p><p>Membre du bureau, engagé dans l'organisation des sorties et la vie du club.</p></article>
           <article class="card team-card"><div class="avatar" aria-hidden="true">S</div><h3>Salomé</h3><p class="role">Bureau de l'association</p><p>Membre du bureau, active dans l'animation de la communauté et l'accueil des nouveaux membres.</p></article>
+          <article class="card team-card"><div class="avatar" aria-hidden="true">D</div><h3>Dany</h3><p class="role">Guide historique</p><p>Guide historique de l'association, présent depuis les débuts pour accompagner les duos et transmettre son expérience.</p></article>
+          <article class="card team-card"><div class="avatar" aria-hidden="true">T</div><h3>Thibaut</h3><p class="role">Guide bénévole · Communication</p><p>Guide bénévole, il aide notamment sur la communication de l'association pour la faire rayonner.</p></article>
         </div>
       </div>
     </section>
@@ -386,7 +391,7 @@ PAGES["les-sports.html"] = dict(
       <div class="container">
         <div class="grid grid-2 reveal">
           <article class="card sport-card">
-            <img src="assets/img/gallery/photo-08.png" alt="Duo sur un tandem A2CMieux devant le Sacré-Cœur à Paris.">
+            <img src="assets/img/gallery/tandem-super.jpg" alt="Deux tandems de l'association A2CMieux en pleine course sur route, pilotes et équipiers en maillot orange et noir.">
             <div class="body">
               <span class="tag">Cyclisme</span>
               <h3>Vélo en tandem</h3>
@@ -394,7 +399,7 @@ PAGES["les-sports.html"] = dict(
             </div>
           </article>
           <article class="card sport-card">
-            <img src="assets/img/gallery/photo-05.png" alt="Membres d'A2CMieux lors d'une séance sportive en intérieur.">
+            <img src="assets/img/gallery/natation.jpg" alt="Un entraîneur A2CMieux encourage une nageuse au bord du bassin, front contre front, tous deux souriants.">
             <div class="body">
               <span class="tag">Aquatique</span>
               <h3>Natation</h3>
@@ -402,7 +407,7 @@ PAGES["les-sports.html"] = dict(
             </div>
           </article>
           <article class="card sport-card">
-            <img src="assets/img/gallery/photo-15.png" alt="Groupe de coureurs et guides A2CMieux sur une piste d'athlétisme.">
+            <img src="assets/img/gallery/course-guide.jpg" alt="Un guide et une coureuse d'A2CMieux reliés par un cordon de guidage lors d'une course à pied ensoleillée.">
             <div class="body">
               <span class="tag">Athlétisme</span>
               <h3>Course à pied</h3>
@@ -410,7 +415,7 @@ PAGES["les-sports.html"] = dict(
             </div>
           </article>
           <article class="card sport-card">
-            <img src="assets/img/gallery/photo-01.png" alt="Deux sportives A2CMieux souriantes en maillot orange lors d'un entraînement.">
+            <img src="assets/img/gallery/podium-duathlon.jpg" alt="L'équipe A2CMieux réunie et souriante derrière une banderole de course, après une épreuve de duathlon.">
             <div class="body">
               <span class="tag">Endurance</span>
               <h3>Triathlon &amp; duathlon</h3>
@@ -467,8 +472,17 @@ PAGES["les-evenements.html"] = dict(
         </div>
         <div class="gallery reveal" style="margin-top:2rem">
 """ + "".join(
-        '          <a href="assets/img/gallery/photo-{n:02d}.png" target="_blank" rel="noopener"><img src="assets/img/gallery/photo-{n:02d}.png" alt="Photo {n} des activités d\'A2CMieux." loading="lazy"></a>\n'.format(n=i)
-        for i in [1, 8, 15, 20, 3, 6, 9, 12]
+        '          <a href="assets/img/gallery/{f}" target="_blank" rel="noopener"><img src="assets/img/gallery/{f}" alt="{alt}" loading="lazy"></a>\n'.format(f=f, alt=alt)
+        for f, alt in [
+            ("tandem-super.jpg", "Deux tandems A2CMieux en pleine course sur route."),
+            ("podium-duathlon.jpg", "L'équipe A2CMieux réunie derrière une banderole après une course."),
+            ("natation.jpg", "Un entraîneur encourage une nageuse au bord du bassin."),
+            ("course-guide.jpg", "Un guide et une coureuse reliés par un cordon de guidage."),
+            ("corrida-pere-noel.jpg", "Deux membres d'A2CMieux déguisés lors d'une corrida de Noël à Paris."),
+            ("tandem-groupe.jpg", "Un groupe de cyclistes A2CMieux à l'entraînement sur tandems."),
+            ("photo-08.png", "Duo posant avec un tandem devant le Sacré-Cœur à Paris."),
+            ("photo-01.png", "Deux sportives souriantes en maillot orange lors d'un entraînement."),
+        ]
     ) +
 """        </div>
       </div>
@@ -588,11 +602,12 @@ PAGES["devenir-benevole.html"] = dict(
         </div>
         <div class="center reveal" style="margin-top:2.4rem">
           <h2>A2CMieux compte sur vous&nbsp;!</h2>
-          <p>Rejoignez l'équipe. C'est simple&nbsp;: contactez-nous via notre formulaire ou par e-mail.</p>
+          <p>La meilleure façon de nous rejoindre et de faire vivre l'association, c'est d'<strong>adhérer</strong>. Votre adhésion nous permet de composer de nouveaux duos et de développer nos actions.</p>
           <div class="btn-group" style="justify-content:center">
-            <a class="btn btn-primary btn-lg" href="contact.html">Formulaire de contact</a>
-            <a class="btn btn-outline btn-lg" href="mailto:{email}">Écrire un e-mail</a>
+            <a class="btn btn-primary btn-lg" href="adhesions.html">Adhérer à l'association</a>
+            <a class="btn btn-outline btn-lg" href="faire-un-don.html">Faire un don</a>
           </div>
+          <p style="margin-top:1.2rem;font-size:.95rem">Une question avant de vous engager&nbsp;? <a href="contact.html">Contactez-nous</a>.</p>
         </div>
       </div>
     </section>
