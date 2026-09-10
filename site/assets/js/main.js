@@ -1,33 +1,96 @@
-/* A2CMieux — interactions & accessibilité */
+/* A2CMieux — interactions & panneau d'accessibilité */
 (function () {
   "use strict";
   var root = document.documentElement;
+  var KEY = "a2c-a11y";
+  var MIN = 0.85, MAX = 1.6, STEP = 0.1;
 
-  /* --- Préférences persistantes (contraste + taille du texte) --- */
+  var state = { scale: 1, grayscale: false, contrast: false, negative: false, lightbg: false, underline: false, readable: false };
+
   try {
-    if (localStorage.getItem("a2c-contrast") === "high") root.setAttribute("data-contrast", "high");
-    if (localStorage.getItem("a2c-textsize") === "large") root.setAttribute("data-textsize", "large");
+    var saved = JSON.parse(localStorage.getItem(KEY) || "{}");
+    for (var k in state) { if (k in saved) state[k] = saved[k]; }
   } catch (e) {}
 
-  function bindToggle(id, attr, value, storageKey) {
-    var btn = document.getElementById(id);
-    if (!btn) return;
-    function sync() {
-      var on = root.getAttribute(attr) === value;
-      btn.setAttribute("aria-pressed", on ? "true" : "false");
-    }
-    sync();
-    btn.addEventListener("click", function () {
-      var on = root.getAttribute(attr) === value;
-      if (on) { root.removeAttribute(attr); try { localStorage.removeItem(storageKey); } catch (e) {} }
-      else { root.setAttribute(attr, value); try { localStorage.setItem(storageKey, value); } catch (e) {} }
-      sync();
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+
+  function apply() {
+    // Taille du texte
+    root.style.fontSize = state.scale === 1 ? "" : (state.scale * 100).toFixed(0) + "%";
+    // Filtres visuels (niveaux de gris / contraste négatif)
+    var f = [];
+    if (state.grayscale) f.push("grayscale(1)");
+    if (state.negative) f.push("invert(1) hue-rotate(180deg)");
+    root.style.filter = f.join(" ");
+    // Modes par classes / attribut
+    root.classList.toggle("a11y-lightbg", state.lightbg);
+    root.classList.toggle("a11y-underline", state.underline);
+    root.classList.toggle("a11y-readable", state.readable);
+    if (state.contrast) root.setAttribute("data-contrast", "high");
+    else root.removeAttribute("data-contrast");
+  }
+
+  // Application immédiate (avant le rendu complet) pour éviter le clignotement
+  apply();
+
+  function syncButtons() {
+    var map = { grayscale: "grayscale", contrast: "contrast", negative: "negative", lightbg: "lightbg", underline: "underline", readable: "readable" };
+    document.querySelectorAll(".a11y-tool[aria-pressed]").forEach(function (btn) {
+      var key = btn.getAttribute("data-a11y");
+      if (map[key]) btn.setAttribute("aria-pressed", state[map[key]] ? "true" : "false");
     });
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    bindToggle("toggle-contrast", "data-contrast", "high", "a2c-contrast");
-    bindToggle("toggle-textsize", "data-textsize", "large", "a2c-textsize");
+    syncButtons();
+
+    /* --- Panneau d'accessibilité --- */
+    var panel = document.getElementById("a11y-panel");
+    var overlay = document.getElementById("a11y-overlay");
+    var openBtn = document.getElementById("a11y-open");
+    var closeBtn = document.getElementById("a11y-close");
+    var lastFocus = null;
+
+    function openPanel() {
+      lastFocus = document.activeElement;
+      panel.hidden = false; overlay.hidden = false;
+      openBtn.setAttribute("aria-expanded", "true");
+      var first = panel.querySelector("button");
+      if (first) first.focus();
+      document.addEventListener("keydown", onKey);
+    }
+    function closePanel() {
+      panel.hidden = true; overlay.hidden = true;
+      openBtn.setAttribute("aria-expanded", "false");
+      document.removeEventListener("keydown", onKey);
+      if (lastFocus) lastFocus.focus();
+    }
+    function onKey(e) { if (e.key === "Escape") closePanel(); }
+
+    if (openBtn) openBtn.addEventListener("click", openPanel);
+    if (closeBtn) closeBtn.addEventListener("click", closePanel);
+    if (overlay) overlay.addEventListener("click", closePanel);
+
+    /* --- Actions des outils --- */
+    document.querySelectorAll("[data-a11y]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var a = btn.getAttribute("data-a11y");
+        switch (a) {
+          case "text-plus": state.scale = Math.min(MAX, +(state.scale + STEP).toFixed(2)); break;
+          case "text-minus": state.scale = Math.max(MIN, +(state.scale - STEP).toFixed(2)); break;
+          case "grayscale": state.grayscale = !state.grayscale; break;
+          case "contrast": state.contrast = !state.contrast; break;
+          case "negative": state.negative = !state.negative; break;
+          case "lightbg": state.lightbg = !state.lightbg; break;
+          case "underline": state.underline = !state.underline; break;
+          case "readable": state.readable = !state.readable; break;
+          case "reset":
+            state = { scale: 1, grayscale: false, contrast: false, negative: false, lightbg: false, underline: false, readable: false };
+            break;
+        }
+        apply(); save(); syncButtons();
+      });
+    });
 
     /* --- Menu mobile --- */
     var toggle = document.querySelector(".nav-toggle");

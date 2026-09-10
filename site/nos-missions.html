@@ -15,13 +15,35 @@
 <body>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
 
-  <div class="a11y-bar" role="region" aria-label="Options d'accessibilité">
+  <div class="a11y-bar" role="region" aria-label="Options d'accessibilité et réseaux sociaux">
     <div class="container">
-      <span>Accessibilité :</span>
-      <button type="button" id="toggle-contrast" class="a11y-btn" aria-pressed="false">Contraste élevé</button>
-      <button type="button" id="toggle-textsize" class="a11y-btn" aria-pressed="false">Texte plus grand</button>
+      <span class="a11y-bar-label">Suivez-nous</span>
+      <div class="social social--bar"><a href="https://www.instagram.com/a2cmieux.paris" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)" class="social-instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a><a href="https://www.facebook.com/a2cmieuxsports" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)" class="social-facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a><a href="https://www.youtube.com/channel/UCHil4jJGYPGS2OwvpxKMLXA/featured" target="_blank" rel="noopener" aria-label="Chaîne YouTube (nouvel onglet)" class="social-youtube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a></div>
+      <button type="button" id="a11y-open" class="a11y-btn" aria-expanded="false" aria-controls="a11y-panel">
+        <span aria-hidden="true">&#9855;</span> Options d'accessibilité
+      </button>
     </div>
   </div>
+
+  <div class="a11y-overlay" id="a11y-overlay" hidden></div>
+  <aside class="a11y-panel" id="a11y-panel" role="dialog" aria-modal="true" aria-labelledby="a11y-title" hidden>
+    <div class="a11y-panel-head">
+      <h2 id="a11y-title"><span aria-hidden="true">&#9855;</span> Accessibilité</h2>
+      <button type="button" id="a11y-close" class="a11y-close" aria-label="Fermer le panneau d'accessibilité">&#10005;</button>
+    </div>
+    <p class="a11y-panel-intro">Adaptez l'affichage à votre confort. Vos réglages sont mémorisés sur cet appareil.</p>
+    <div class="a11y-grid">
+      <button type="button" class="a11y-tool" data-a11y="text-plus"><span class="ico" aria-hidden="true">A+</span> Augmenter le texte</button>
+      <button type="button" class="a11y-tool" data-a11y="text-minus"><span class="ico" aria-hidden="true">A&minus;</span> Diminuer le texte</button>
+      <button type="button" class="a11y-tool" data-a11y="grayscale" aria-pressed="false"><span class="ico" aria-hidden="true">&#9681;</span> Niveaux de gris</button>
+      <button type="button" class="a11y-tool" data-a11y="contrast" aria-pressed="false"><span class="ico" aria-hidden="true">&#9680;</span> Haut contraste</button>
+      <button type="button" class="a11y-tool" data-a11y="negative" aria-pressed="false"><span class="ico" aria-hidden="true">&#9635;</span> Contraste négatif</button>
+      <button type="button" class="a11y-tool" data-a11y="lightbg" aria-pressed="false"><span class="ico" aria-hidden="true">&#9723;</span> Arrière-plan clair</button>
+      <button type="button" class="a11y-tool" data-a11y="underline" aria-pressed="false"><span class="ico" aria-hidden="true">&#95;</span> Liens soulignés</button>
+      <button type="button" class="a11y-tool" data-a11y="readable" aria-pressed="false"><span class="ico" aria-hidden="true">&#9633;A</span> Police lisible</button>
+    </div>
+    <button type="button" class="a11y-reset" data-a11y="reset"><span aria-hidden="true">&#8635;</span> Réinitialiser</button>
+  </aside>
 
   <header class="site-header">
     <nav class="container nav" aria-label="Navigation principale">
@@ -103,6 +125,8 @@
         <div class="footer-brand">
           <img src="assets/img/logo.png" alt="Logo A2CMieux">
           <p>A2CMieux — Sports et Loisirs en Duo. Club sportif parisien affilié à la Fédération Française Handisport, rendant le sport accessible aux personnes déficientes visuelles.</p>
+          <p class="footer-follow"><strong>Suivez-nous&nbsp;:</strong></p>
+          <div class="social social--footer"><a href="https://www.instagram.com/a2cmieux.paris" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)" class="social-instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg><span>Instagram</span></a><a href="https://www.facebook.com/a2cmieuxsports" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)" class="social-facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg><span>Facebook</span></a><a href="https://www.youtube.com/channel/UCHil4jJGYPGS2OwvpxKMLXA/featured" target="_blank" rel="noopener" aria-label="Chaîne YouTube (nouvel onglet)" class="social-youtube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg><span>YouTube</span></a></div>
         </div>
         <div>
           <h4>Naviguer</h4>

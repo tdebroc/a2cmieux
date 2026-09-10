@@ -14,6 +14,33 @@ EMAIL = "contact.a2cmieux@gmail.com"
 FFH = "https://www.handisport.org/"
 INJA = "https://injalouisbraille.fr/"
 
+INSTAGRAM = "https://www.instagram.com/a2cmieux.paris"
+FACEBOOK = "https://www.facebook.com/a2cmieuxsports"
+YOUTUBE = "https://www.youtube.com/channel/UCHil4jJGYPGS2OwvpxKMLXA/featured"
+
+# Icônes SVG des réseaux sociaux (inline, sans dépendance externe)
+_SVG_INSTA = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg>'
+_SVG_FB = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg>'
+_SVG_YT = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>'
+
+
+def social_links(classname="social", labelled=False):
+    items = [
+        (INSTAGRAM, "Instagram", "Instagram", _SVG_INSTA),
+        (FACEBOOK, "Facebook", "Facebook", _SVG_FB),
+        (YOUTUBE, "YouTube", "Chaîne YouTube", _SVG_YT),
+    ]
+    out = ['<div class="{c}">'.format(c=classname)]
+    for url, name, aria, svg in items:
+        text = '<span>{n}</span>'.format(n=name) if labelled else ''
+        out.append(
+            '<a href="{u}" target="_blank" rel="noopener" aria-label="{a} (nouvel onglet)" class="social-{k}">{svg}{t}</a>'.format(
+                u=url, a=aria, k=name.lower(), svg=svg, t=text)
+        )
+    out.append('</div>')
+    return "".join(out)
+
+
 NAV = [
     ("Accueil", "index.html", None),
     ("L'association", None, [
@@ -57,13 +84,35 @@ def menu_html(active):
 def header(active):
     return """  <a class="skip-link" href="#main">Aller au contenu principal</a>
 
-  <div class="a11y-bar" role="region" aria-label="Options d'accessibilité">
+  <div class="a11y-bar" role="region" aria-label="Options d'accessibilité et réseaux sociaux">
     <div class="container">
-      <span>Accessibilité :</span>
-      <button type="button" id="toggle-contrast" class="a11y-btn" aria-pressed="false">Contraste élevé</button>
-      <button type="button" id="toggle-textsize" class="a11y-btn" aria-pressed="false">Texte plus grand</button>
+      <span class="a11y-bar-label">Suivez-nous</span>
+      """ + social_links("social social--bar") + """
+      <button type="button" id="a11y-open" class="a11y-btn" aria-expanded="false" aria-controls="a11y-panel">
+        <span aria-hidden="true">&#9855;</span> Options d'accessibilité
+      </button>
     </div>
   </div>
+
+  <div class="a11y-overlay" id="a11y-overlay" hidden></div>
+  <aside class="a11y-panel" id="a11y-panel" role="dialog" aria-modal="true" aria-labelledby="a11y-title" hidden>
+    <div class="a11y-panel-head">
+      <h2 id="a11y-title"><span aria-hidden="true">&#9855;</span> Accessibilité</h2>
+      <button type="button" id="a11y-close" class="a11y-close" aria-label="Fermer le panneau d'accessibilité">&#10005;</button>
+    </div>
+    <p class="a11y-panel-intro">Adaptez l'affichage à votre confort. Vos réglages sont mémorisés sur cet appareil.</p>
+    <div class="a11y-grid">
+      <button type="button" class="a11y-tool" data-a11y="text-plus"><span class="ico" aria-hidden="true">A+</span> Augmenter le texte</button>
+      <button type="button" class="a11y-tool" data-a11y="text-minus"><span class="ico" aria-hidden="true">A&minus;</span> Diminuer le texte</button>
+      <button type="button" class="a11y-tool" data-a11y="grayscale" aria-pressed="false"><span class="ico" aria-hidden="true">&#9681;</span> Niveaux de gris</button>
+      <button type="button" class="a11y-tool" data-a11y="contrast" aria-pressed="false"><span class="ico" aria-hidden="true">&#9680;</span> Haut contraste</button>
+      <button type="button" class="a11y-tool" data-a11y="negative" aria-pressed="false"><span class="ico" aria-hidden="true">&#9635;</span> Contraste négatif</button>
+      <button type="button" class="a11y-tool" data-a11y="lightbg" aria-pressed="false"><span class="ico" aria-hidden="true">&#9723;</span> Arrière-plan clair</button>
+      <button type="button" class="a11y-tool" data-a11y="underline" aria-pressed="false"><span class="ico" aria-hidden="true">&#95;</span> Liens soulignés</button>
+      <button type="button" class="a11y-tool" data-a11y="readable" aria-pressed="false"><span class="ico" aria-hidden="true">&#9633;A</span> Police lisible</button>
+    </div>
+    <button type="button" class="a11y-reset" data-a11y="reset"><span aria-hidden="true">&#8635;</span> Réinitialiser</button>
+  </aside>
 
   <header class="site-header">
     <nav class="container nav" aria-label="Navigation principale">
@@ -89,6 +138,8 @@ def footer():
         <div class="footer-brand">
           <img src="assets/img/logo.png" alt="Logo A2CMieux">
           <p>A2CMieux — Sports et Loisirs en Duo. Club sportif parisien affilié à la Fédération Française Handisport, rendant le sport accessible aux personnes déficientes visuelles.</p>
+          <p class="footer-follow"><strong>Suivez-nous&nbsp;:</strong></p>
+          """ + social_links("social social--footer", labelled=True) + """
         </div>
         <div>
           <h4>Naviguer</h4>
@@ -475,14 +526,21 @@ PAGES["les-evenements.html"] = dict(
 """ + "".join(
         '          <a href="assets/img/gallery/{f}" target="_blank" rel="noopener"><img src="assets/img/gallery/{f}" alt="{alt}" loading="lazy"></a>\n'.format(f=f, alt=alt)
         for f, alt in [
-            ("tandem-super.jpg", "Deux tandems A2CMieux en pleine course sur route."),
-            ("podium-duathlon.jpg", "L'équipe A2CMieux réunie derrière une banderole après une course."),
-            ("natation.jpg", "Un entraîneur encourage une nageuse au bord du bassin."),
-            ("course-guide.jpg", "Un guide et une coureuse reliés par un cordon de guidage."),
-            ("corrida-pere-noel.jpg", "Deux membres d'A2CMieux déguisés lors d'une corrida de Noël à Paris."),
-            ("tandem-groupe.jpg", "Un groupe de cyclistes A2CMieux à l'entraînement sur tandems."),
-            ("photo-08.png", "Duo posant avec un tandem devant le Sacré-Cœur à Paris."),
-            ("photo-01.png", "Deux sportives souriantes en maillot orange lors d'un entraînement."),
+            ("marine.jpg", "Deux coureuses A2CMieux devant la tour Eiffel illuminée en soirée."),
+            ("dany.jpg", "Un duo de coureurs A2CMieux, guide et sportif reliés, lors d'une course urbaine."),
+            ("podium.jpg", "Des membres d'A2CMieux sur un podium de compétition avec de jeunes participants."),
+            ("arrivee-team.jpg", "L'équipe A2CMieux franchissant l'arche d'arrivée d'une course, bras levés."),
+            ("alexandre.jpg", "Un coureur A2CMieux accompagné de son guide lors d'une course en ville."),
+            ("lepouce.jpg", "Un coureur A2CMieux lève le pouce en plein effort pendant une course."),
+            ("rico.jpg", "Deux coureurs A2CMieux souriants avec leurs dossards après une épreuve."),
+            ("louise.jpg", "Des coureuses A2CMieux à l'entraînement sur une piste d'athlétisme au crépuscule."),
+            ("yasmine.jpg", "Deux coureuses A2CMieux sur une avenue arborée parisienne."),
+            ("joelette.jpg", "Sortie A2CMieux avec une joëlette tout-terrain, ambiance de course de Noël."),
+            ("mathieu.jpg", "Un duo de coureurs A2CMieux souriants, paysage de nature en arrière-plan."),
+            ("ludo-stade-de-france.jpg", "Des membres d'A2CMieux devant la pelouse du Stade de France."),
+            ("ludo-heureux.jpg", "Un coureur A2CMieux tout sourire en selfie pendant une course à Paris."),
+            ("guillaume-bouchou.jpg", "Deux cyclistes A2CMieux casqués avec leur vélo avant un départ."),
+            ("versailles.jpg", "Cyclistes et tandem A2CMieux devant le château de Versailles."),
         ]
     ) +
 """        </div>
@@ -493,11 +551,12 @@ PAGES["les-evenements.html"] = dict(
       <div class="container">
         <div class="callout reveal">
           <h2>Envie de participer à nos prochains rendez-vous&nbsp;?</h2>
-          <p>Contactez-nous pour connaître les prochaines dates de sorties, d'entraînements et d'événements.</p>
+          <p>Contactez-nous pour connaître les prochaines dates de sorties, d'entraînements et d'événements. Et pour ne rien manquer, suivez toutes nos aventures sur les réseaux sociaux&nbsp;!</p>
           <div class="btn-group" style="justify-content:center">
             <a class="btn btn-primary btn-lg" href="contact.html">Nous contacter</a>
             <a class="btn btn-outline btn-lg" href="adhesions.html">Adhérer</a>
           </div>
+          """ + social_links("social social--callout", labelled=True) + """
         </div>
       </div>
     </section>
@@ -658,7 +717,7 @@ PAGES["contact.html"] = dict(
             <p>Que vous soyez une personne déficiente visuelle, un futur guide, un partenaire ou un média, n'hésitez pas à nous écrire.</p>
             <div class="card" style="margin-bottom:18px">
               <h3>E-mail</h3>
-              <p><a href="mailto:{email}">{email}</a></p>
+              <p><a href="mailto:contact.a2cmieux@gmail.com">contact.a2cmieux@gmail.com</a></p>
             </div>
             <div class="card" style="margin-bottom:18px">
               <h3>Où nous trouver</h3>
@@ -667,6 +726,11 @@ PAGES["contact.html"] = dict(
             <div class="card">
               <h3>Nous soutenir</h3>
               <p><a href="adhesions.html">Adhérer</a> · <a href="faire-un-don.html">Faire un don</a> · <a href="devenir-benevole.html">Devenir bénévole</a></p>
+            </div>
+            <div class="card">
+              <h3>Suivez-nous</h3>
+              <p>Retrouvez nos actualités et nos aventures sur les réseaux&nbsp;:</p>
+              """ + social_links("social social--card", labelled=True) + """
             </div>
           </div>
           <div>
