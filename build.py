@@ -252,7 +252,7 @@ PAGES["index.html"] = dict(
           <img src="assets/img/gallery/photo-01.png" alt="Deux sportives de l'association A2CMieux, en maillot orange, souriant pendant une séance de vélo.">
           <div class="badge">
             <span class="ic" aria-hidden="true">🤝</span>
-            <span><b>+50%</b><small>d'adhérentes femmes</small></span>
+            <span><b>Le sport en duo</b><small>guides &amp; sportifs déficients visuels</small></span>
           </div>
         </div>
       </div>
@@ -354,7 +354,7 @@ PAGES["nos-missions.html"] = dict(
             <p class="tag-line">Un accompagnement sur mesure</p>
             <h2>Des duos adaptés à chacun·e</h2>
             <p>Un Duo Sportif est composé d'un guide et d'une personne déficiente visuelle. Nous prêtons une attention particulière aux binômes&nbsp;: chaque guide est formé et accompagné, et nous disposons de coachs professionnels pour certaines de nos activités.</p>
-            <p>A2CMieux est ouvert à toutes et à tous (plus de 50% d'adhérentes), adolescents ou adultes, débutants ou sportifs confirmés, pratiquants réguliers ou non. Vous avez un projet&nbsp;? Nous mettrons tout en œuvre pour le réaliser.</p>
+            <p>A2CMieux est ouvert à toutes et à tous, adolescents ou adultes, débutants ou sportifs confirmés, pratiquants réguliers ou non. Vous avez un projet&nbsp;? Nous mettrons tout en œuvre pour le réaliser.</p>
           </div>
         </div>
       </div>
@@ -396,7 +396,7 @@ PAGES["qui-sommes-nous.html"] = dict(
             <p>A2CMieux — « Association pour Cyclisme, Course, Mieux » — est née de la conviction que le sport doit être accessible à toutes et à tous. Club sportif affilié à la <a href="{ffh}" target="_blank" rel="noopener">Fédération Française Handisport</a>, l'association a pour objet de favoriser toute activité sportive ou de loisir type multisport organisée par ou pour des personnes atteintes de déficience visuelle, grâce à la formation de Duos Sportifs.</p>
             <p>Nous accompagnons chaque personne, quels que soient son niveau, ses besoins et son projet, pour découvrir, débuter, s'entraîner ou se perfectionner.</p>
           </div>
-          <div class="split-media"><img src="assets/img/gallery/tandem-groupe.jpg" alt="Un groupe de cyclistes de l'association A2CMieux à l'entraînement sur des tandems."></div>
+          <div class="split-media"><img src="assets/img/gallery/tandem-super.jpg" alt="Deux tandems de l'association A2CMieux en pleine course sur route, pilotes et équipiers en maillot orange et noir."></div>
         </div>
       </div>
     </section>
@@ -443,7 +443,7 @@ PAGES["les-sports.html"] = dict(
       <div class="container">
         <div class="grid grid-2 reveal">
           <article class="card sport-card">
-            <img src="assets/img/gallery/tandem-super.jpg" alt="Deux tandems de l'association A2CMieux en pleine course sur route, pilotes et équipiers en maillot orange et noir.">
+            <img src="assets/img/gallery/tandem-groupe.jpg" alt="Un groupe de cyclistes de l'association A2CMieux à l'entraînement sur des tandems.">
             <div class="body">
               <span class="tag">Cyclisme</span>
               <h3>Vélo en tandem</h3>
