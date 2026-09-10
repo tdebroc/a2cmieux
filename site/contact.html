@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — A2CMieux</title>
+  <meta name="description" content="Contactez A2CMieux pour rejoindre l'association, devenir guide, proposer un partenariat ou poser vos questions.">
+  <meta property="og:title" content="Contact — A2CMieux">
+  <meta property="og:description" content="Contactez A2CMieux pour rejoindre l'association, devenir guide, proposer un partenariat ou poser vos questions.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#FF7235">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <div class="a11y-bar" role="region" aria-label="Options d'accessibilité">
+    <div class="container">
+      <span>Accessibilité :</span>
+      <button type="button" id="toggle-contrast" class="a11y-btn" aria-pressed="false">Contraste élevé</button>
+      <button type="button" id="toggle-textsize" class="a11y-btn" aria-pressed="false">Texte plus grand</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="A2CMieux, retour à l'accueil">
+        <img src="assets/img/logo.png" alt="" width="48" height="48">
+        <span><b>A2CMieux</b><small>Sports en duo · Paris</small></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu">
+        <span aria-hidden="true">☰</span> Menu
+      </button>
+      <ul class="menu" id="primary-menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li class="has-sub" data-open="false"><button type="button" aria-expanded="false" aria-haspopup="true">L'association <span aria-hidden="true">▾</span></button><ul class="submenu"><li><a href="nos-missions.html">Nos missions</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-partenaires.html">Nos partenaires</a></li></ul></li>
+        <li><a href="les-sports.html">Les sports</a></li>
+        <li><a href="les-evenements.html">Événements</a></li>
+        <li class="has-sub" data-open="false"><button type="button" aria-expanded="false" aria-haspopup="true">Nous soutenir <span aria-hidden="true">▾</span></button><ul class="submenu"><li><a href="adhesions.html">Adhésions</a></li><li><a href="faire-un-don.html">Faire un don</a></li><li><a href="devenir-benevole.html">Devenir bénévole</a></li></ul></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a class="btn-nav" href="adhesions.html">Adhérer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="container">
+        <p class="crumb"><a href="index.html">Accueil</a> › Contact</p>
+        <h1>Nous contacter</h1>
+        <p class="reveal">Une question, une envie de rejoindre l'aventure ou de nous soutenir ? Écrivez-nous, nous serons ravis de vous répondre.</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="split reveal">
+          <div>
+            <h2>Parlons de votre projet</h2>
+            <p>Que vous soyez une personne déficiente visuelle, un futur guide, un partenaire ou un média, n'hésitez pas à nous écrire.</p>
+            <div class="card" style="margin-bottom:18px">
+              <h3>E-mail</h3>
+              <p><a href="mailto:contact.a2cmieux@gmail.com">contact.a2cmieux@gmail.com</a></p>
+            </div>
+            <div class="card" style="margin-bottom:18px">
+              <h3>Où nous trouver</h3>
+              <p>Paris et Île-de-France, France.</p>
+            </div>
+            <div class="card">
+              <h3>Nous soutenir</h3>
+              <p><a href="adhesions.html">Adhérer</a> · <a href="faire-un-don.html">Faire un don</a> · <a href="devenir-benevole.html">Devenir bénévole</a></p>
+            </div>
+          </div>
+          <div>
+            <form class="form card" action="mailto:contact.a2cmieux@gmail.com" method="post" enctype="text/plain" aria-label="Formulaire de contact">
+              <h3 class="mt-0">Formulaire de contact</h3>
+              <div class="field">
+                <label for="nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label>
+                <input id="nom" name="nom" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email">Adresse e-mail <span class="req" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="sujet">Sujet</label>
+                <select id="sujet" name="sujet">
+                  <option>Devenir guide bénévole</option>
+                  <option>Pratiquer un sport (déficient·e visuel·le)</option>
+                  <option>Proposer un partenariat</option>
+                  <option>Faire un don</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Votre message <span class="req" aria-hidden="true">*</span></label>
+                <span class="hint" id="msg-hint">Décrivez votre demande en quelques lignes.</span>
+                <textarea id="message" name="message" rows="6" aria-describedby="msg-hint" required></textarea>
+              </div>
+              <button class="btn btn-primary btn-lg" type="submit">Envoyer le message</button>
+              <p class="hint">Les champs marqués d'un astérisque (*) sont obligatoires. À l'envoi, votre logiciel de messagerie s'ouvre pour transmettre votre message à l'association.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/img/logo.png" alt="Logo A2CMieux">
+          <p>A2CMieux — Sports et Loisirs en Duo. Club sportif parisien affilié à la Fédération Française Handisport, rendant le sport accessible aux personnes déficientes visuelles.</p>
+        </div>
+        <div>
+          <h4>Naviguer</h4>
+          <ul>
+            <li><a href="nos-missions.html">Nos missions</a></li>
+            <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+            <li><a href="les-sports.html">Les sports</a></li>
+            <li><a href="les-evenements.html">Événements</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>S'engager</h4>
+          <ul>
+            <li><a href="adhesions.html">Adhérer</a></li>
+            <li><a href="faire-un-don.html">Faire un don</a></li>
+            <li><a href="devenir-benevole.html">Devenir bénévole</a></li>
+            <li><a href="nos-partenaires.html">Nos partenaires</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:contact.a2cmieux@gmail.com">contact.a2cmieux@gmail.com</a></li>
+            <li><a href="contact.html">Formulaire de contact</a></li>
+            <li>Paris, France</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> A2CMieux — Association loi 1901. Tous droits réservés.</span>
+        <span><a href="politique-de-confidentialite.html">Politique de confidentialité</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
