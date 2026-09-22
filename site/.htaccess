@@ -1,0 +1,12 @@
+# Redirection HTTP → HTTPS (généré par LWS)
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} !on
+RewriteCond %{HTTP_HOST} ^(?:www\.)?a2cmieux\.fr(?:.*)$ [nc]
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [redirect=301,L]
+
+# Site statique
+DirectoryIndex index.html
+
+# Pages d'erreur
+ErrorDocument 404 /index.html

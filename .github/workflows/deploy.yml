@@ -1,37 +1,25 @@
-name: Déploiement GitHub Pages
+name: Déploiement FTP
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Récupération du code
         uses: actions/checkout@v4
 
-      - name: Configuration de Pages
-        uses: actions/configure-pages@v5
-
-      - name: Envoi de l'artefact (dossier site/)
-        uses: actions/upload-pages-artifact@v3
+      - name: Déploiement FTP vers LWS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          path: ./site
-
-      - name: Déploiement
-        id: deployment
-        uses: actions/deploy-pages@v4
+          server: ftp.a2cmieux.fr
+          username: ${{ secrets.FTP_LOGIN }}
+          password: ${{ secrets.FTP_SECRET }}
+          local-dir: ./site/
+          server-dir: /
+          exclude: |
+            **/.git*
+            **/.git*/**

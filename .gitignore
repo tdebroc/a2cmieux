@@ -18,3 +18,5 @@ shot-*.png
 *.mov
 *.avi
 *.m4v
+
+ftp_credentials*

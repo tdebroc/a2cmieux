@@ -3,16 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A2CMieux — Sports et Loisirs en Duo</title>
-  <meta name="description" content="A2CMieux, club sportif parisien affilié à la Fédération Française Handisport, rend le sport accessible aux personnes déficientes visuelles grâce à des Duos Sportifs guide + sportif.">
-  <meta property="og:title" content="A2CMieux — Sports et Loisirs en Duo">
-  <meta property="og:description" content="A2CMieux, club sportif parisien affilié à la Fédération Française Handisport, rend le sport accessible aux personnes déficientes visuelles grâce à des Duos Sportifs guide + sportif.">
+  <title>Photos — A2CMieux</title>
+  <meta name="description" content="Retrouvez toutes nos photos sur Instagram : entraînements, sorties, compétitions et moments de vie du club A2CMieux.">
+  <meta property="og:title" content="Photos — A2CMieux">
+  <meta property="og:description" content="Retrouvez toutes nos photos sur Instagram : entraînements, sorties, compétitions et moments de vie du club A2CMieux.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#FF7235">
   <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
   <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* Placeholder affiché si le widget Behold n'est pas encore configuré */
+    .behold-placeholder {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 6px;
+      margin: 2rem 0;
+    }
+    .behold-placeholder-cell {
+      aspect-ratio: 1;
+      background: #f0f0f0;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: .85rem;
+      text-align: center;
+      padding: .5rem;
+    }
+    .behold-setup-banner {
+      background: #fff8ed;
+      border: 1.5px dashed #FF7235;
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0 1rem;
+      font-size: .95rem;
+    }
+    .behold-setup-banner code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: .9em;
+    }
+    /* Masque le placeholder dès que Behold a rendu le widget */
+    #behold-widget:not(:empty) ~ .behold-placeholder,
+    #behold-widget:not(:empty) ~ .behold-setup-banner {
+      display: none;
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Aller au contenu principal</a>
@@ -20,7 +60,7 @@
   <div class="a11y-bar" role="region" aria-label="Options d'accessibilité et réseaux sociaux">
     <div class="container">
       <span class="a11y-bar-label">Suivez-nous</span>
-      <div class="social social--bar"><a href="https://www.instagram.com/a2cmieux.paris" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)" class="social-instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a><a href="https://www.facebook.com/a2cmieuxsports" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)" class="social-facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a><a href="https://www.youtube.com/channel/UCHil4jJGYPGS2OwvpxKMLXA/featured" target="_blank" rel="noopener" aria-label="Chaîne YouTube (nouvel onglet)" class="social-youtube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a></div>
+      <div class="social social--bar"><a href="https://www.instagram.com/a2cmieux.paris" target="_blank" rel="noopener" aria-label="Instagram (nouvel onglet)" class="social-instagram"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.2-.3-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 8.1a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm6.3-8.3a1.15 1.15 0 1 1-2.3 0 1.15 1.15 0 0 1 2.3 0Z"/></svg></a><a href="https://www.facebook.com/a2cmieuxsports" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)" class="social-facebook"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.2c-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12Z"/></svg></a><a href="https://www.youtube.com/channel/UCHil4jJGYPGS2OwvpxKMLXA/featured" target="_blank" rel="noopener" aria-label="Chaîne YouTube (nouvel onglet)" class="social-youtube"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="currentColor" d="M23 7.5a3 3 0 0 0-2.1-2.1C19 4.9 12 4.9 12 4.9s-7 0-8.9.5A3 3 0 0 0 1 7.5 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12 31 31 0 0 0 23 7.5ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a></div>
       <button type="button" id="a11y-open" class="a11y-btn" aria-expanded="false" aria-controls="a11y-panel">
         <span aria-hidden="true">&#9855;</span> Options d'accessibilité
       </button>
@@ -57,10 +97,11 @@
         <span aria-hidden="true">☰</span> Menu
       </button>
       <ul class="menu" id="primary-menu">
-        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li class="has-sub" data-open="false"><button type="button" aria-expanded="false" aria-haspopup="true">L'association <span aria-hidden="true">▾</span></button><ul class="submenu"><li><a href="nos-missions.html">Nos missions</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-partenaires.html">Nos partenaires</a></li></ul></li>
         <li><a href="les-sports.html">Les sports</a></li>
         <li><a href="les-evenements.html">Événements</a></li>
+        <li><a href="nos-photos.html" aria-current="page">Photos</a></li>
         <li class="has-sub" data-open="false"><button type="button" aria-expanded="false" aria-haspopup="true">Nous soutenir <span aria-hidden="true">▾</span></button><ul class="submenu"><li><a href="adhesions.html">Adhésions</a></li><li><a href="faire-un-don.html">Faire un don</a></li><li><a href="devenir-benevole.html">Devenir bénévole</a></li></ul></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a class="btn-nav" href="adhesions.html">Adhérer</a></li>
@@ -69,119 +110,62 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="page-head">
       <div class="container">
-        <div class="reveal">
-          <span class="eyebrow"><span class="dot"></span> Club affilié à la Fédération Française Handisport</span>
-          <h1>Le sport, ça se vit <span>mieux à deux</span>.</h1>
-          <p class="lead">A2CMieux forme des <strong>Duos Sportifs</strong> — un guide et une personne déficiente visuelle — pour rendre le vélo, la natation, la course à pied et le triathlon accessibles à toutes et à tous.</p>
-          <div class="btn-group">
-            <a class="btn btn-primary btn-lg" href="adhesions.html">Rejoindre l'association</a>
-            <a class="btn btn-outline btn-lg" href="les-sports.html">Découvrir les sports</a>
-          </div>
-        </div>
-        <div class="hero-media reveal">
-          <img src="assets/img/gallery/photo-01.png" alt="Deux sportives de l'association A2CMieux, en maillot orange, souriant pendant une séance de vélo.">
-          <div class="badge">
-            <span class="ic" aria-hidden="true">🤝</span>
-            <span><b>Le sport en duo</b><small>guides &amp; sportifs déficients visuels</small></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="stripe section">
-      <div class="container">
-        <div class="stat-grid reveal">
-          <div class="stat"><b>4</b><span>disciplines sportives</span></div>
-          <div class="stat"><b>100%</b><span>bénévole &amp; solidaire</span></div>
-          <div class="stat"><b>Gratuit</b><span>pour les guides</span></div>
-          <div class="stat"><b>Paris</b><span>et Île-de-France</span></div>
-        </div>
+        <p class="crumb"><a href="index.html">Accueil</a> › Photos</p>
+        <h1>Nos photos</h1>
+        <p class="reveal">Retrouvez toutes nos aventures en images : entraînements, compétitions, sorties et moments de vie du club.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="center narrow reveal">
-          <p class="tag-line">Notre raison d'être</p>
-          <h2>Rendre le sport accessible à toutes et à tous</h2>
-          <p>A2CMieux est une association, mais c'est avant tout un club sportif qui favorise toute activité sportive ou de loisir organisée par ou pour des personnes atteintes de déficience visuelle. Quels que soient votre niveau, vos besoins ou votre projet, nous vous accompagnons.</p>
-        </div>
-        <div class="grid grid-3" style="margin-top:2.4rem">
-          <article class="card reveal">
-            <div class="ic" aria-hidden="true">👁️</div>
-            <h3>Des Duos Sportifs</h3>
-            <p>Chaque duo associe un guide bénévole et une personne déficiente visuelle, dans un binôme harmonieux et adapté au niveau de chacun·e.</p>
-          </article>
-          <article class="card reveal">
-            <div class="ic" aria-hidden="true">🎯</div>
-            <h3>Du loisir à la compétition</h3>
-            <p>Initiation, pratique loisir, reprise d'activité, entraînements réguliers ou préparation aux compétitions : à vous de choisir.</p>
-          </article>
-          <article class="card reveal">
-            <div class="ic" aria-hidden="true">💛</div>
-            <h3>Une communauté</h3>
-            <p>Une équipe soudée, bienveillante et 100% bénévole, ouverte à toutes et à tous, adolescents comme adultes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section--alt">
-      <div class="container">
-        <div class="split reveal">
-          <div class="split-media"><img src="assets/img/gallery/photo-08.png" alt="Un duo de cyclistes A2CMieux posant avec leur tandem devant la basilique du Sacré-Cœur à Paris."></div>
-          <div>
-            <p class="tag-line">Nos sports</p>
-            <h2>Quatre disciplines, un même esprit</h2>
-            <p>Nous formons des duos adaptés dans plusieurs disciplines. Envie de tester&nbsp;? Nous mettons tout en œuvre pour réaliser votre projet sportif.</p>
-            <ul class="ticks">
-              <li>Cyclisme en tandem</li>
-              <li>Natation</li>
-              <li>Course à pied</li>
-              <li>Triathlon &amp; duathlon</li>
-            </ul>
-            <div class="btn-group">
-              <a class="btn btn-primary" href="les-sports.html">Voir toutes les activités</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Widget Behold.so — mur Instagram -->
+        <!-- Pour activer : créer un compte sur behold.so, connecter @a2cmieux.paris,
+             puis remplacer YOUR_FEED_ID ci-dessous par l'identifiant fourni. -->
+        <div id="behold-widget" data-behold-id="YOUR_FEED_ID"></div>
+        <script src="https://w.behold.so/widget.js" type="module"></script>
 
-    <section class="section">
-      <div class="container">
-        <div class="split reverse reveal">
-          <div class="split-media"><img src="assets/img/gallery/photo-15.png" alt="Groupe de coureurs et de guides A2CMieux réunis sur une piste d'athlétisme à Paris."></div>
-          <div>
-            <p class="tag-line">Devenez guide</p>
-            <h2>Nous avons besoin de vous</h2>
-            <p>Nos Duos Sportifs ne peuvent exister sans guides. Pour ne pas solliciter constamment les mêmes personnes et composer des binômes harmonieux, il est primordial d'avoir de nouveaux guides, dans toutes les disciplines.</p>
-            <p>Aucune expérience particulière n'est requise : nous formons et accompagnons chaque guide.</p>
-            <div class="btn-group">
-              <a class="btn btn-primary" href="adhesions.html">Devenir guide</a>
-              <a class="btn btn-outline" href="devenir-benevole.html">Autres façons d'aider</a>
-            </div>
-          </div>
+        <!-- Placeholder affiché tant que le widget n'est pas configuré -->
+        <div class="behold-setup-banner">
+          <strong>Configuration requise</strong> — Pour afficher le mur Instagram, connectez-vous sur
+          <a href="https://behold.so" target="_blank" rel="noopener">behold.so</a> (gratuit),
+          reliez le compte <strong>@a2cmieux.paris</strong>, puis remplacez
+          <code>YOUR_FEED_ID</code> dans <code>nos-photos.html</code> par l'identifiant généré.
         </div>
+        <div class="behold-placeholder" aria-hidden="true">
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+          <div class="behold-placeholder-cell">📷</div>
+        </div>
+
       </div>
     </section>
 
     <section class="section">
       <div class="container">
         <div class="callout reveal">
-          <h2>Prêt·e à nous rejoindre&nbsp;?</h2>
-          <p>Que vous soyez déficient·e visuel·le, guide bénévole ou simplement motivé·e, il y a une place pour vous chez A2CMieux. Le sport, ça se vit mieux à deux&nbsp;!</p>
+          <h2>Suivez-nous sur Instagram&nbsp;!</h2>
+          <p>Pour ne rater aucune photo et suivre l'actualité du club au quotidien, rejoignez notre communauté sur Instagram.</p>
           <div class="btn-group" style="justify-content:center">
-            <a class="btn btn-primary btn-lg" href="adhesions.html">Adhérer à l'association</a>
-            <a class="btn btn-outline btn-lg" href="contact.html">Nous contacter</a>
+            <a class="btn btn-primary btn-lg" href="https://www.instagram.com/a2cmieux.paris" target="_blank" rel="noopener">Voir notre Instagram</a>
+            <a class="btn btn-outline btn-lg" href="adhesions.html">Adhérer</a>
           </div>
         </div>
       </div>
     </section>
-
   </main>
+
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -198,6 +182,7 @@
             <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
             <li><a href="les-sports.html">Les sports</a></li>
             <li><a href="les-evenements.html">Événements</a></li>
+            <li><a href="nos-photos.html">Photos</a></li>
           </ul>
         </div>
         <div>
