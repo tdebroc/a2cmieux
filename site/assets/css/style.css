@@ -261,13 +261,13 @@ html.a11y-lightbg .a11y-bar .social--bar a { color: #fff !important; }
 
 @media (max-width: 960px) {
   .nav-toggle { display: inline-flex; }
+  .nav { flex-wrap: wrap; }
   .menu {
-    position: fixed; inset: 0 0 0 auto; width: min(86vw, 360px);
-    flex-direction: column; align-items: stretch; gap: 4px;
-    background: #fff; padding: 84px 18px 30px; box-shadow: var(--shadow);
-    transform: translateX(100%); transition: transform .28s ease; overflow-y: auto; z-index: 200;
+    display: none; width: 100%;
+    flex-direction: column; align-items: stretch; gap: 2px;
+    padding: 8px 0 14px; border-top: 1px solid var(--border);
   }
-  .menu.open { transform: translateX(0); }
+  .menu.open { display: flex; }
   .menu .has-sub > button { width: 100%; justify-content: space-between; }
   .submenu { position: static; display: block; box-shadow: none; border: 0; padding: 0 0 0 12px; }
   .menu .has-sub .submenu { display: none; }
